@@ -1,9 +1,32 @@
+// write a function that confirms or denies whether 
+// a lowercase string word 
+// is the same backwards and forwards.
+
+
+
+
 function isPalindrome(word) {
-  // Write your algorithm here
+  let wordArray = word.split('');
+  let backwardsArray = wordArray.reverse();
+  let newWord = backwardsArray.join('');
+ 
+  if (word === newWord) {
+    return true
+  }
+  else {
+    return false
+  }
 }
 
+
+isPalindrome("disgusting")
 /* 
-  Add your pseudocode here
+  1.split the string into an array of letters
+  2. reverse()
+  3. join()
+  4. if (word = newWord)
+  return true
+  else return false
 */
 
 /*
@@ -20,6 +43,10 @@ if (require.main === module) {
 
   console.log("Expecting: false");
   console.log("=>", isPalindrome("robot"));
+
+  console.log("Expecting: true");
+  console.log("=>", isPalindrome("hannah"))
+
 }
 
 module.exports = isPalindrome;
